@@ -1,0 +1,192 @@
+nav{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background:#FFFFFF;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    padding: 0 100px;
+}
+
+nav .logo{
+    font-family: 'Great Vibes', cursive;
+    color: #2880DF;
+    font-size: 30px ;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+}
+
+nav .logo a{
+    text-decoration: none;
+    color: #2880DF;
+}
+
+nav .nav-items{
+    display: flex;
+    flex: 1;
+    list-style: none;
+    padding: 0 0 0 40px;
+}
+
+nav .nav-items li{
+padding: 0 15px;
+}
+
+nav .nav-items li a{
+    color: #1A0331;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+nav .nav-items li a:hover{
+    color: #DE9D1F;
+}
+
+nav form{
+    display: flex;
+    height: 40px;
+    border-radius:2px ;
+    padding: 2px;
+    /* background:#1e232b; */
+    min-width: 18%!important;
+    border-radius: 40px solid rgba(155, 155, 155, 0.2);
+}
+
+nav form .search-recipe{
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+    font-weight: 500;
+    background: none;
+    border-radius: 30px;
+    font-size: 17px;
+    
+}
+
+nav form button{
+    padding: 0 15px;
+    background:#829FE4 ;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+nav .menu, nav .search-icon, nav .cancel{
+    width: 40px;
+    text-align: center;
+    margin: 0 50px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .menu i, nav .search-icon, nav .cancel{
+    display: none;
+}
+
+@media (max-width: 1245px){
+    nav{
+        padding: 0 5px;
+    }
+}
+@media (max-width: 1038px){
+    nav{
+        padding: 0px;
+    }
+    nav .logo{
+        flex: 2;
+        text-align: center;
+    }
+    nav .nav-items{
+        position: fixed;
+        z-index: 99;
+        top: 65px;
+        width: 100%;
+        left: -150%;
+        height: 100%;
+        background:#052164;
+        display: inline-block;
+        padding: 10px 50px 0 50px;
+        text-align: center;
+        transition: left 0.3s ease;
+    }
+    nav .nav-items.active{
+        left: -5%;
+    }
+    nav .nav-items li{
+        line-height: 40px;
+        margin: 30px 0;
+    }
+    nav .nav-items li a{
+        font-size: 20px;
+        color: white;
+    }
+    nav form{
+        position: absolute;
+        top: 80px;
+        right: 50px;
+        opacity: 0;
+        pointer-events: none;
+        transition: top 0.3s ease, opacity 0.1s ease;
+    
+    }
+
+    nav form.active{
+        opacity: 1;
+        top: 95px;
+    }
+    nav form::before{
+        position: absolute;
+        content: "";
+        top: -13px;
+        right: 0;
+        width: 0;
+        height: 0;
+        z-index: -1;
+        margin-bottom: -20px 0 0;
+        border-radius: 10px solid transparent;
+        border-bottom-color: #1e232b;
+
+    }
+    nav form::after{
+        position: absolute;
+        content: "";
+        height: 60px;
+        width: calc(100%+20px);
+        padding: 2px;
+        border-radius: 2px;
+        z-index: -2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    nav .menu{
+        display: block;
+    }
+    nav .search-icon, nav .menu i{
+        display: block;
+    }
+    nav .search-icon.hide, nav .menu i.hide{
+        display: none;
+    }
+
+    nav .cancel.show{
+        display: block;
+    }
+}
+
+
+/*------------------homepage styling starts here------------------------*/
+
+
+
