@@ -52,22 +52,6 @@
   </nav>
     <!-- end of nav -->
     <!-- main -->
-
-    <?php
-  $query= "SELECT * FROM recipes";
-  $query_run= mysqli_query($conn, $query);
-  $check_db= mysqli_num_rows($query_run)>0;
-
-  if($check_db){
-    while($row=mysqli_fetch_assoc($query_run)){
-      echo $row['servings'];
-    }
-
-  }else{
-    echo 'Recipes currently unavailable.';
-  };
-
-?>
     <main class="page">
       <!-- header -->
       <header class="hero">
@@ -90,7 +74,18 @@
             <a href="tag-template.html">Food (4)</a>
           </div>
         </div>
-        <!-- end of tag container -->
+       <!-- end of tag container -->
+
+    <?php
+  $query= "SELECT * FROM recipes";
+  $query_run= mysqli_query($conn, $query);
+  $check_db= mysqli_num_rows($query_run)>0;
+
+  if($check_db){
+    while($row=mysqli_fetch_assoc($query_run))
+    {
+      ?>
+
         <!-- recipes list -->
         <div class="recipes-list">
           <!-- single recipe -->
@@ -104,42 +99,18 @@
             <p>Prep : 15min | Cook : 5min</p>
           </a>
           <!-- end of single recipe -->
-          <!-- single recipe -->
-          <a href="single-recipe.php" class="recipe">
-            <img
-              src="./assets/recipes/recipe-2.jpeg"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Greek Ribs</h5>
-            <p>Prep : 15min | Cook : 5min</p>
-          </a>
-          <!-- end of single recipe -->
-          <!-- single recipe -->
-          <a href="single-recipe.php" class="recipe">
-            <img
-              src="./assets/recipes/recipe-3.jpeg"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Vegetable Soup</h5>
-            <p>Prep : 15min | Cook : 5min</p>
-          </a>
-          <!-- end of single recipe -->
-          <!-- single recipe -->
-          <a href="single-recipe.php" class="recipe">
-            <img
-              src="./assets/recipes/recipe-4.jpeg"
-              class="img recipe-img"
-              alt=""
-            />
-            <h5>Banana Pancakes</h5>
-            <p>Prep : 15min | Cook : 5min</p>
-          </a>
-          <!-- end of single recipe -->
         </div>
         <!-- end of recipes list -->
       </section>
+      <?php
+
+      }
+
+        }else{
+        echo 'Recipes currently unavailable.';
+        }
+
+    ?>
     </main>
     <!-- end of main -->
     <script src="./js/app.js"></script>
