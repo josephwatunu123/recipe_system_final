@@ -10,13 +10,13 @@ continuebtn.onclick= ()=>{
 
     //beginning of ajax
     let xhr = new XMLHttpRequest();
-    xhr.open("POST","php/signup.php",true);
+    xhr.open("POST","signup.php",true);
     xhr.onload=()=>{
         if(xhr.readyState=== XMLHttpRequest.DONE){
             if(xhr.status===200){
                 let data=xhr.response;
                 if(data=="success"){
-                    location.href = "users.php";
+                    location.href = "index.php";
 
                 }else{
                     errorText.textContent =data;
@@ -25,6 +25,7 @@ continuebtn.onclick= ()=>{
             }
 
         }
+        
     }
 
     //we have to send the form data through ajax to php

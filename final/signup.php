@@ -5,6 +5,7 @@
     $lname= mysqli_real_escape_string($conn, $_POST['lname']);
     $email= mysqli_real_escape_string($conn, $_POST['email']);
     $password= mysqli_real_escape_string($conn, $_POST['password']);
+    $disordername= mysqli_real_escape_string($conn, $_POST['disorder']);
 
     if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password) ){
         //checking if user email is valid
@@ -34,7 +35,7 @@
                             $random_id = rand(time(), 10000000); //creating random id for usrs
 
                             //let's insert all user data inside table
-                            $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, fname, lname, email, password, img, status)
+                            $sql2 = mysqli_query($conn, "INSERT INTO users (unique_id, firstname, lastname, email, password, img, status)
                                         VALUES ({$random_id},'{$fname}','{$lname}','{$email}', '{$password}', '{$new_img_name}', '{$status}')");
                                 if($sql2){ //if these data are inserted successfully
                                     $sql3 = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");

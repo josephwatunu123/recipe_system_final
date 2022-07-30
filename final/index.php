@@ -1,3 +1,15 @@
+<?php
+
+  // if(isset($_POST["submit"])){
+
+  // }
+  // else
+  // header("location: signup_page.php");
+
+  include_once "config.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,6 +52,22 @@
   </nav>
     <!-- end of nav -->
     <!-- main -->
+
+    <?php
+  $query= "SELECT * FROM recipes";
+  $query_run= mysqli_query($conn, $query);
+  $check_db= mysqli_num_rows($query_run)>0;
+
+  if($check_db){
+    while($row=mysqli_fetch_assoc($query_run)){
+      echo $row['servings'];
+    }
+
+  }else{
+    echo 'Recipes currently unavailable.';
+  };
+
+?>
     <main class="page">
       <!-- header -->
       <header class="hero">
