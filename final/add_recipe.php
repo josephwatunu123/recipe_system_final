@@ -18,7 +18,7 @@ if(isset($_POST['add_recipe'])){
 	$recipe_img_tmp_name=$_FILES['recipe_img']['tmp_name'];
 	$recipe_img_folder= 'images/'.$recipe_img;
 
-	$insert= "INSERT INTO recipes(reicpe_name,recipe_info,prep_time,cooking_time,servings,ingredients,
+	$insert= "INSERT INTO recipes(recipe_name,recipe_info,prep_time,cooking_time,servings,ingredients,
 	step_1, step_2, step_3, step_4,	recipe_image) VALUES ('$recipe_name', '$recipe_info', '$prep_time',
 	'$cooking_time', '$servings', '$ingredients', '$step_1', '$step_2', '$step_3', '$step_4', '$recipe_img')";
 
