@@ -37,7 +37,7 @@
       <div class="menu"><i class="fa-solid fa-bars"></i></div>
       <div class="logo"><a href="#">HealthyCo</a></div>
       <div class="nav-items">
-          <li><a href="#">Home</a></li>
+          <li><a href="add_recipe.php">Add Recipe</a></li>
           <li><a href="#">Recipes</a></li>
           <li><a href="#">Blogs</a></li>
           <li><a href="#">About us</a></li>
@@ -91,12 +91,12 @@
           <!-- single recipe -->
           <a href="single-recipe.php" class="recipe">
             <img
-              src="./assets/recipes/recipe-1.jpeg"
+              src="./images/<?php echo $row['recipe_image'];?>"
               class="img recipe-img"
-              alt=""
+              alt="recipe image"
             />
-            <h5>Carne Asada</h5>
-            <p>Prep : 15min | Cook : 5min</p>
+            <h5><?php echo $row['recipe_name'];?></h5>
+            <p>Prep :<?php $row['prep_time'];?> | Cook :<?php $row['cooking_time'];?></p>
           </a>
           <!-- end of single recipe -->
         </div>
